@@ -1,0 +1,97 @@
+:root {
+    --dark-color: #635bff;
+    --light-color: #80e9ff;
+}
+
+body {
+    background-color: #eee;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* Inicio del icono */
+
+.svg-icon {
+    cursor: pointer;
+}
+.svg-icon:hover #light1 {
+    transform: translateX(20%);
+}
+.svg-icon:hover #dark1 {
+    transform: translateX(35%);
+    opacity: 0;
+}
+.svg-icon:hover #dark2 {
+    transform: translateX(-9%);
+}
+
+#darkGroup {
+    fill: var(--dark-color);
+}
+
+#lightGroup {
+    fill: var(--light-color);
+}
+
+#dark1,
+#dark2,
+#light1 {
+    transition: all 1s ease;
+}
+
+#dark2 {
+    transform: translateX(-100%);
+}
+
+/* Inicio del phone */
+
+#skeleton {
+    animation: fadeInUp 9s ease;
+    /* opacity: 0; */
+    /* transform: translateY(20%); */
+    /* animation: better-phone 9s; */
+    /* animation-delay: calc(var(--order) * 400ms); */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    30%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#bolt g {
+    opacity: 0;
+    animation: dropIn 8s ease infinite;    
+    /* forwards indica que el estilo se aplica al último keyframe, mientras que infinite indica el parámetro de loop */
+    /* opacity: 0;
+    transform: translateY(-20%); */
+    /* animation: better-phone 7s ease infinite; */
+    animation-delay: calc(var(--order) * 200ms);
+    /* animation-delay: 200ms; */
+}
+
+@keyframes dropIn {
+    20% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    30%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* @keyframes better-phone {
+    5% {
+        opacity: 0;
+    }
+    30%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
